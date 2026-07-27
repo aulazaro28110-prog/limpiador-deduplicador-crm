@@ -1,0 +1,14 @@
+# Cuaderno de trabajo interno (NO publicar: revela contexto de aprendizaje)
+CLAUDE.md
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Salidas generadas (no versionar lo que produce la herramienta)
+contactos_limpios.csv
+duplicados_eliminados.csv
+contactos_salesforce.csv
+informe.html
+*.salida.csv

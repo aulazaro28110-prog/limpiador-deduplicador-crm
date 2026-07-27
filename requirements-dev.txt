@@ -1,0 +1,4 @@
+# Dependencias SOLO para desarrollo (ejecutar los tests).
+# El proyecto en sí NO necesita librerías externas: usa únicamente la
+# biblioteca estándar de Python 3 (csv, re, argparse, html, os, sys, datetime).
+pytest>=8.0
