@@ -6,6 +6,10 @@
 > **rastro auditable** de qué se eliminó y por qué, y genera un **informe visual**.
 > Solo Python estándar, sin dependencias.
 
+### 🔗 [**Ver la demo interactiva (online)**](https://aulazaro28110-prog.github.io/limpiador-deduplicador-crm/)
+
+*Panel visual con las métricas de una ejecución real sobre datos de ejemplo — se abre en el navegador.*
+
 ---
 
 ## 🧭 El proyecto de un vistazo
@@ -170,7 +174,7 @@ limpiador-deduplicador/
 ├── requirements-dev.txt · .gitignore · LICENSE · README.md
 ```
 
-## 🛠️ Decisiones técnicas (para defender en entrevista)
+## 🛠️ Decisiones técnicas
 
 - **Normalizar antes de comparar** evita los falsos negativos de comparar el dato en bruto.
 - **Union-find** resuelve la transitividad de "email O teléfono" en tiempo casi lineal; el
@@ -181,3 +185,37 @@ limpiador-deduplicador/
   dejar rastro.
 - **Robustez de entrada:** autodetección de separador, tolerancia a BOM y a mayúsculas en
   las cabeceras, y error claro si faltan las columnas mínimas.
+
+---
+
+## 🛣️ Roadmap (posibles siguientes pasos)
+
+- [ ] **Coincidencia difusa (fuzzy):** detectar duplicados que solo se *parecen* (nombres tecleados distinto, sin ningún dato normalizado en común), con un umbral de similitud.
+- [ ] **Origen de datos directo:** leer desde la API del CRM en vez de un CSV exportado a mano.
+- [ ] **Ejecución programada:** correr la limpieza de forma periódica para mantener la base siempre depurada.
+
+---
+
+## ⚠️ Limitaciones conocidas
+
+- La detección agrupa por coincidencia **exacta tras normalizar** (email o teléfono). Dos filas de la misma persona que no compartan **ningún** dato normalizado (p. ej. dos móviles distintos y el email tecleado de dos formas no equivalentes) no se detectan como duplicado.
+- La validación comprueba el **formato** del email y el teléfono, no que el buzón o la línea existan de verdad (eso requeriría verificación externa).
+
+---
+
+## 👤 Autor
+
+**Álvaro Utazu Lázaro** · En formación como AI Engineer
+
+- 📧 Email: aulazaro.28110@gmail.com
+- 💼 LinkedIn: [alvaro-utazu-lázaro](https://www.linkedin.com/in/alvaro-utazu-lázaro-952255291)
+
+Proyecto desarrollado con metodología asistida por IA ([Claude Code](https://claude.ai), Anthropic) como parte de un programa de aprendizaje práctico de ingeniería de software e IA.
+
+---
+
+## 📄 Licencia
+
+Código **visible pero no libre** (*source-available*). Puedes ver, leer y ejecutar este proyecto para **evaluarlo**, pero queda prohibido copiarlo, modificarlo, redistribuirlo o reutilizarlo sin permiso escrito del autor. Consulta el archivo [LICENSE](LICENSE).
+
+© 2026 Álvaro Utazu Lázaro. Todos los derechos reservados.

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Informe de Limpieza y Deduplicación</title>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; background:#0f172a;
+         color:#e2e8f0; margin:0; padding:40px; }
+  h1 { color:#38bdf8; }
+  h2 { color:#94a3b8; border-bottom:1px solid #334155; padding-bottom:6px; }
+  .cards { display:flex; gap:20px; flex-wrap:wrap; margin:30px 0; }
+  .card { background:#1e293b; border-radius:14px; padding:24px 30px;
+           min-width:150px; box-shadow:0 4px 14px rgba(0,0,0,.3); }
+  .card .num { font-size:38px; font-weight:700; }
+  .card .lbl { color:#94a3b8; font-size:14px; }
+  .ok { color:#4ade80; } .dup { color:#fbbf24; } .bad { color:#f87171; }
+  table { width:100%; border-collapse:collapse; margin:14px 0 34px; }
+  th,td { text-align:left; padding:10px 12px; border-bottom:1px solid #334155; }
+  th { color:#38bdf8; }
+  tr:hover { background:#1e293b; }
+  .tablas { display:flex; gap:40px; flex-wrap:wrap; }
+  .tablas > div { flex:1; min-width:280px; }
+  footer { margin-top:40px; color:#64748b; font-size:13px; }
+</style>
+</head>
+<body>
+  <h1>🧹 Informe de Limpieza y Deduplicación</h1>
+  <p>Análisis automático de <b>16</b> contactos &middot; 27/07/2026 22:35</p>
+  <div class="cards">
+    <div class="card"><div class="num">16</div>
+      <div class="lbl">📥 Leídos</div></div>
+    <div class="card"><div class="num ok">8</div>
+      <div class="lbl">✅ Únicos</div></div>
+    <div class="card"><div class="num dup">8</div>
+      <div class="lbl">🔁 Duplicados (50.0%)</div></div>
+    <div class="card"><div class="num bad">0</div>
+      <div class="lbl">⚠️ Con datos dudosos</div></div>
+    <div class="card"><div class="num">2.1</div>
+      <div class="lbl">⏱️ Min. manuales ahorrados</div></div>
+  </div>
+
+  <div class="tablas">
+    <div>
+      <h2>🔎 Duplicados por motivo</h2>
+      <table><tr><th>Motivo</th><th>Nº</th></tr><tr><td>email y teléfono</td><td>4</td></tr><tr><td>email</td><td>2</td></tr><tr><td>teléfono</td><td>1</td></tr><tr><td>enlazado (transitivo)</td><td>1</td></tr></table>
+    </div>
+    <div>
+      <h2>🏢 Empresas con más duplicados</h2>
+      <table><tr><th>Empresa</th><th>Duplicados</th></tr><tr><td>TechCorp</td><td>2</td></tr><tr><td>Cloudly</td><td>1</td></tr><tr><td>Datasoft</td><td>1</td></tr><tr><td>Freelance</td><td>1</td></tr><tr><td>Innova</td><td>1</td></tr></table>
+    </div>
+  </div>
+
+  <h2>🧾 Duplicados detectados (auditoría)</h2>
+  <table>
+    <tr><th>Duplicado</th><th>Email</th><th>Teléfono</th>
+        <th>Se fusiona con</th><th>Motivo</th></tr>
+    <tr><td>ANA GARCIA</td><td>Ana@TechCorp.com</td><td>612345678</td><td>Ana García</td><td>email y teléfono</td></tr><tr><td>Ana G.</td><td>ana@techcorp.com</td><td>666 66 66 66</td><td>Ana García</td><td>email</td></tr><tr><td>luis perez</td><td>luis@datasoft.com</td><td>+34 699887766</td><td>Luis Pérez</td><td>email y teléfono</td></tr><tr><td>marta</td><td>marta@innova.es</td><td>+34 611 22 33 44</td><td>Marta Ruiz</td><td>email y teléfono</td></tr><tr><td>Diego R.</td><td>diego.ramos@gmail.com</td><td>600 11 22 33</td><td>Diego Ramos</td><td>teléfono</td></tr><tr><td>Sofia R.</td><td>sofia@gmial.com</td><td>600 12 34 56</td><td>Sofía Romero</td><td>email y teléfono</td></tr><tr><td>Elena S.</td><td>elena@vistasoft.com</td><td>999 00 01 11</td><td>Elena Sanz</td><td>email</td></tr><tr><td>Contacto Nuevo</td><td>nuevo@correo.com</td><td>999 00 01 11</td><td>Elena Sanz</td><td>enlazado (transitivo)</td></tr>
+  </table>
+
+  <footer>Generado automáticamente por deduplicador.py — sin librerías externas.
+  Herramienta no destructiva: el archivo de entrada nunca se modifica.</footer>
+</body>
+</html>
